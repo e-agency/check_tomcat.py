@@ -210,7 +210,11 @@ def read_page_status_XML(host,port,url,user,password):
 #Read a html manager page
 def read_page(host,port,url,user,password):
     error=False
-    url_tomcat = "http://"+host+":"+port+url
+    # fix for https access
+    if port == '443':
+         url_tomcat = "https://"+host+url
+    else:
+        url_tomcat = "http://"+host+":"+port+url
     if args.verbosity:
         print "connection url: %s\n"%(url_tomcat)
 
