@@ -339,6 +339,7 @@ if args.verbosity:
 #MODE OPTIONS LOGIC
 #-------------------------------------------------------------------------
 
+'''
 #read serviceinfo
 url_serverinfo = args.URL+"/serverinfo"
 page_serverinfo,error_serverinfo = read_page(args.host,args.port,url_serverinfo,args.user,args.authentication)
@@ -377,7 +378,8 @@ if(error_serverinfo==False):
         tomcat_version=0
         if args.verbosity:
             print "WARNING: I can't read the tomcat version"
-
+'''
+error_serverinfo = True
 # status option
 #-----------------------------------------------------------------------------
 if args.mode == 'status':
